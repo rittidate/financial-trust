@@ -1,0 +1,59 @@
+<div class="max-w-4xl mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-8">Financial Trust</h1>
+  
+  <div id="flash" class="mb-4">
+    <%= render "layouts/flash" %>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6 mb-8">
+    <div class="p-6 bg-white rounded shadow">
+      <h2 class="text-xl font-semibold mb-2">Savings Account</h2>
+      <% if @savings %>
+        <%= render "accounts/balance", account: @savings %>
+        <%= form_with model: @savings, url: account_path(@savings), method: :patch, class: "mt-4 flex gap-2" do |f| %>
+          <%= f.text_field :name, class: "flex-1 rounded-md border-gray-300 shadow-sm text-sm", placeholder: "Name this account (e.g. 'Standard Savings')" %>
+          <%= f.submit "Rename", class: "bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm cursor-pointer" %>
+        <% end %>
+      <% else %>
+        <p class="text-gray-500 text-sm">No account</p>
+      <% end %>
+    </div>
+    
+    <div class="p-6 bg-white rounded shadow">
+      <h2 class="text-xl font-semibold mb-2">Investing Account</h2>
+      <% if @investing %>
+        <%= render "accounts/balance", account: @investing %>
+        <%= form_with model: @investing, url: account_path(@investing), method: :patch, class: "mt-4 flex gap-2" do |f| %>
+          <%= f.text_field :name, class: "flex-1 rounded-md border-gray-300 shadow-sm text-sm", placeholder: "Name this account (e.g. 'High Risk')" %>
+          <%= f.submit "Rename", class: "bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm cursor-pointer" %>
+        <% end %>
+      <% else %>
+        <p class="text-gray-500 text-sm">No account</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="bg-gray-50 p-6 rounded border">
+    <h2 class="text-2xl font-bold mb-4">Internal Transfer</h2>
+    <%= form_with url: transfers_path, method: :post, class: "space-y-4" do |f| %>
+      <div class="flex gap-4">
+        <div class="flex-1">
+          <%= f.label :source_id, "From Account", class: "block text-sm font-medium" %>
+          <%= f.collection_select :source_id, @user.accounts, :id, :type, {}, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
+        </div>
+        
+        <div class="flex-1">
+          <%= f.label :target_id, "To Account", class: "block text-sm font-medium" %>
+          <%= f.collection_select :target_id, @user.accounts, :id, :type, {}, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
+        </div>
+      </div>
+      
+      <div>
+        <%= f.label :amount, "Amount ($)", class: "block text-sm font-medium" %>
+        <%= f.number_field :amount, step: 0.01, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
+      </div>
+      
+      <%= f.submit "Transfer Funds", class: "w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 cursor-pointer" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<% flash.each do |key, value| %>
+  <% color = key == 'alert' ? 'red' : 'green' %>
+  <div class="bg-<%= color %>-100 border border-<%= color %>-400 text-<%= color %>-700 px-4 py-3 rounded relative" role="alert">
+    <%= value %>
+  </div>
+<% end %>
