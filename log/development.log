@@ -5249,3 +5249,1230 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
 
 
+Started GET "/" for 172.18.0.1 at 2026-02-11 17:17:22 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: financial_trust_development. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "172.18.0.2", port 5432 failed: FATAL:  database "financial_trust_development" does not exist
+)
+  
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:63:in `rescue in new_client'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:987:in `connect'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:999:in `reconnect'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:676:in `block in reconnect!'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:675:in `reconnect!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:780:in `block in verify!'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:770:in `verify!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:788:in `connect!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:994:in `block in with_raw_connection'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:993:in `with_raw_connection'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.3) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:431:in `with_connection'
+activerecord (7.2.3) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.3) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.3) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.3) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.3) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.3) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.3) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.3) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:17:23 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: financial_trust_development. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "172.18.0.2", port 5432 failed: FATAL:  database "financial_trust_development" does not exist
+)
+  
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:63:in `rescue in new_client'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:987:in `connect'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:999:in `reconnect'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:676:in `block in reconnect!'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:675:in `reconnect!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:780:in `block in verify!'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:770:in `verify!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:788:in `connect!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:994:in `block in with_raw_connection'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:993:in `with_raw_connection'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.3) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:431:in `with_connection'
+activerecord (7.2.3) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.3) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.3) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.3) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.3) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.3) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.3) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.3) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started POST "/rails/actions" for 172.18.0.1 at 2026-02-11 17:17:36 +0000
+  [1m[35m (189.4ms)[0m  [1m[35mCREATE DATABASE "financial_trust_development" ENCODING = 'unicode'[0m
+  [1m[35m (103.4ms)[0m  [1m[35mCREATE DATABASE "financial_trust_test" ENCODING = 'unicode'[0m
+  
+ActiveRecord::ConnectionNotEstablished (connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+connection to server on socket "/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+connection to server on socket "/tmp/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+):
+
+Causes:
+PG::ConnectionBad (connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+connection to server on socket "/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+connection to server on socket "/tmp/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+)
+  
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:61:in `rescue in new_client'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:987:in `connect'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:999:in `reconnect'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:676:in `block in reconnect!'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:675:in `reconnect!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:780:in `block in verify!'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:770:in `verify!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:788:in `connect!'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:994:in `block in with_raw_connection'
+activesupport (7.2.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:993:in `with_raw_connection'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:55:in `block in raw_execute'
+activesupport (7.2.3) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:1141:in `log'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:54:in `raw_execute'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:538:in `internal_execute'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:137:in `execute'
+activerecord (7.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:27:in `execute'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:48:in `execute'
+activerecord (7.2.3) lib/active_record/connection_adapters/postgresql/schema_statements.rb:46:in `create_database'
+activerecord (7.2.3) lib/active_record/tasks/postgresql_database_tasks.rb:23:in `create'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:117:in `create'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:171:in `block in create_current'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:606:in `block (2 levels) in each_current_configuration'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:603:in `each'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:603:in `block in each_current_configuration'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:614:in `each'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:614:in `each_current_environment'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:602:in `each_current_configuration'
+activerecord (7.2.3) lib/active_record/tasks/database_tasks.rb:171:in `create_current'
+activerecord (7.2.3) lib/active_record/errors.rb:319:in `block in <class:NoDatabaseError>'
+activesupport (7.2.3) lib/active_support/actionable_error.rb:30:in `dispatch'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:17:36 +0000
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:17:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/" for 172.18.0.1 at 2026-02-11 17:18:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:18:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/" for 172.18.0.1 at 2026-02-11 17:18:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:18:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/" for 172.18.0.1 at 2026-02-11 17:18:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:18:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/" for 172.18.0.1 at 2026-02-11 17:18:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:18:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/" for 172.18.0.1 at 2026-02-11 17:18:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:18:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20240210000000_create_financial_trust_tables.rb
+db/migrate/20240210010000_add_password_digest_to_users.rb
+db/migrate/20240210020000_add_unique_index_to_accounts.rb
+db/migrate/20240210030000_add_admin_to_users.rb
+db/migrate/20240210040000_add_interest_rate_to_accounts.rb
+db/migrate/20240210050000_add_name_to_accounts.rb
+db/migrate/20240211220000_change_interest_rate_precision_in_accounts.rb
+db/migrate/20240211230000_create_deposits.rb
+db/migrate/20260211153609_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.3) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.3) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.3) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.3) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.3) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7043320047016100085)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-11 17:24:10.457669', '2026-02-11 17:24:10.457671') RETURNING "key"[0m
+Migrating to CreateFinancialTrustTables (20240210000000)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "user_id" bigint NOT NULL, "type" character varying NOT NULL, "balance" decimal(15,2) DEFAULT 0.0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_accounts_on_type" ON "accounts" ("type")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ledger_entries" ("id" bigserial primary key, "account_id" bigint NOT NULL, "amount" decimal(15,2) NOT NULL, "entry_type" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_95dd992850"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_ledger_entries_on_account_id" ON "ledger_entries" ("account_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240210000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordDigestToUsers (20240210010000)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240210010000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToAccounts (20240210020000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_accounts_on_user_id_and_type" ON "accounts" ("user_id", "type")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240210020000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20240210030000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT FALSE NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240210030000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddInterestRateToAccounts (20240210040000)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "accounts" ADD "interest_rate" decimal(5,4) DEFAULT 0.0 NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240210040000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToAccounts (20240210050000)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "accounts" ADD "name" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240210050000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeInterestRatePrecisionInAccounts (20240211220000)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "accounts" ALTER COLUMN "interest_rate" TYPE decimal(10,4), ALTER COLUMN "interest_rate" SET DEFAULT 0.0, ALTER COLUMN "interest_rate" SET NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240211220000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeposits (20240211230000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "deposits" ("id" bigserial primary key, "account_id" bigint NOT NULL, "amount" decimal(15,2) NOT NULL, "status" character varying DEFAULT 'pending' NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_869f62908d"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_deposits_on_account_id" ON "deposits" ("account_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240211230000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveStorageTables (20260211153609)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260211153609') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7043320047016100085)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Alice"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alice"], ["created_at", "2026-02-11 17:24:34.274955"], ["updated_at", "2026-02-11 17:24:34.274955"], ["password_digest", "[FILTERED]"], ["admin", false]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Admin"], ["created_at", "2026-02-11 17:24:34.444712"], ["updated_at", "2026-02-11 17:24:34.444712"], ["password_digest", "[FILTERED]"], ["admin", true]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSavingsAccount Load (1.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "SavingsAccount"], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "SavingsAccount"], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mSavingsAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("user_id", "type", "balance", "created_at", "updated_at", "interest_rate", "name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["type", "SavingsAccount"], ["balance", "1000.0"], ["created_at", "2026-02-11 17:24:34.481125"], ["updated_at", "2026-02-11 17:24:34.481125"], ["interest_rate", "0.0"], ["name", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mInvestingAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "InvestingAccount"], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "InvestingAccount"], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mInvestingAccount Create (0.1ms)[0m  [1m[32mINSERT INTO "accounts" ("user_id", "type", "balance", "created_at", "updated_at", "interest_rate", "name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["type", "InvestingAccount"], ["balance", "1000.0"], ["created_at", "2026-02-11 17:24:34.487728"], ["updated_at", "2026-02-11 17:24:34.487728"], ["interest_rate", "5.0"], ["name", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLedgerEntry Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ledger_entries" WHERE "ledger_entries"."account_id" = $1 LIMIT $2[0m  [["account_id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLedgerEntry Create (0.9ms)[0m  [1m[32mINSERT INTO "ledger_entries" ("account_id", "amount", "entry_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["account_id", 2], ["amount", "1000.0"], ["entry_type", "transfer_in"], ["created_at", "2026-02-11 17:24:34.504446"], ["updated_at", "2026-02-11 17:24:34.504446"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7043320047016100085)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7043320047016100085)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mLedgerEntry Load (0.3ms)[0m  [1m[34mSELECT "ledger_entries".* FROM "ledger_entries" WHERE "ledger_entries"."account_id" = $1[0m  [["account_id", 1]]
+  [1m[36mSavingsAccount Destroy (1.4ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 1]]
+  [1m[36mLedgerEntry Load (0.2ms)[0m  [1m[34mSELECT "ledger_entries".* FROM "ledger_entries" WHERE "ledger_entries"."account_id" = $1[0m  [["account_id", 2]]
+  [1m[36mLedgerEntry Destroy (0.2ms)[0m  [1m[31mDELETE FROM "ledger_entries" WHERE "ledger_entries"."id" = $1[0m  [["id", 1]]
+  [1m[36mInvestingAccount Destroy (0.2ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 2]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Alice"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alice"], ["created_at", "2026-02-11 17:31:40.740910"], ["updated_at", "2026-02-11 17:31:40.740910"], ["password_digest", "[FILTERED]"], ["admin", false]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Admin"], ["created_at", "2026-02-11 17:31:40.910135"], ["updated_at", "2026-02-11 17:31:40.910135"], ["password_digest", "[FILTERED]"], ["admin", true]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSavingsAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "SavingsAccount"], ["user_id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "SavingsAccount"], ["user_id", 3], ["LIMIT", 1]]
+  [1m[36mSavingsAccount Create (0.2ms)[0m  [1m[32mINSERT INTO "accounts" ("user_id", "type", "balance", "created_at", "updated_at", "interest_rate", "name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["type", "SavingsAccount"], ["balance", "1000.0"], ["created_at", "2026-02-11 17:31:40.914676"], ["updated_at", "2026-02-11 17:31:40.914676"], ["interest_rate", "0.0"], ["name", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mInvestingAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "InvestingAccount"], ["user_id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "InvestingAccount"], ["user_id", 3], ["LIMIT", 1]]
+  [1m[36mInvestingAccount Create (0.1ms)[0m  [1m[32mINSERT INTO "accounts" ("user_id", "type", "balance", "created_at", "updated_at", "interest_rate", "name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["type", "InvestingAccount"], ["balance", "1000.0"], ["created_at", "2026-02-11 17:31:40.917781"], ["updated_at", "2026-02-11 17:31:40.917781"], ["interest_rate", "5.0"], ["name", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLedgerEntry Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ledger_entries" WHERE "ledger_entries"."account_id" = $1 LIMIT $2[0m  [["account_id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLedgerEntry Create (0.6ms)[0m  [1m[32mINSERT INTO "ledger_entries" ("account_id", "amount", "entry_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["account_id", 4], ["amount", "1000.0"], ["entry_type", "transfer_in"], ["created_at", "2026-02-11 17:31:40.919599"], ["updated_at", "2026-02-11 17:31:40.919599"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.18.0.1 at 2026-02-11 17:31:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 51ms (ActiveRecord: 4.5ms (1 query, 0 cached) | GC: 21.9ms)
+
+
+Started GET "/session/new" for 172.18.0.1 at 2026-02-11 17:32:00 +0000
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 13.3ms | GC: 0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 257.5ms | GC: 11.9ms)
+Completed 200 OK in 264ms (Views: 259.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 12.0ms)
+
+
+Started GET "/assets/application-bed4a081aba7ea344ac4cd879248e775c2df2cd14d092fd9c45310b32b48667f.css" for 172.18.0.1 at 2026-02-11 17:32:00 +0000
+Started GET "/favicon.ico" for 172.18.0.1 at 2026-02-11 17:32:01 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/session" for 172.18.0.1 at 2026-02-11 17:32:07 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Admin", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.4ms)
+Completed 422 Unprocessable Content in 235ms (Views: 6.2ms | ActiveRecord: 5.0ms (2 queries, 0 cached) | GC: 3.2ms)
+
+
+Started POST "/session" for 172.18.0.1 at 2026-02-11 17:32:15 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Admin", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 188ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2026-02-11 17:32:15 +0000
+Processing by DashboardsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mSavingsAccount Load (1.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "SavingsAccount"], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/dashboards_controller.rb:4:in `show'
+  [1m[36mInvestingAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."type" = $1 AND "accounts"."user_id" = $2 LIMIT $3[0m  [["type", "InvestingAccount"], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/dashboards_controller.rb:5:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboards/show.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/dashboards/show.html.erb:61:in `flat_map'
+  Rendered dashboards/show.html.erb within layouts/application (Duration: 5.9ms | GC: 0.3ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:pending=>"pending", :approved=>"approved", :rejected=>"rejected"}
+ (called from <class:Deposit> at /rails/app/models/deposit.rb:8)
+  [1m[36mDeposit Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "deposits" WHERE "deposits"."status" = $1[0m  [["status", "pending"]]
+  ↳ app/views/layouts/application.html.erb:35
+  Rendered layout layouts/application.html.erb (Duration: 42.4ms | GC: 1.7ms)
+Completed 200 OK in 77ms (Views: 41.0ms | ActiveRecord: 6.5ms (5 queries, 0 cached) | GC: 3.6ms)
+
+
+Started GET "/admin/accounts" for 172.18.0.1 at 2026-02-11 17:32:19 +0000
+Processing by Admin::AccountsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering admin/accounts/index.html.erb within layouts/application
+  [1m[36mAccount Load (1.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."created_at" DESC[0m
+  ↳ app/views/admin/accounts/index.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ app/views/admin/accounts/index.html.erb:25
+  Rendered admin/accounts/index.html.erb within layouts/application (Duration: 36.8ms | GC: 0.0ms)
+  [1m[36mDeposit Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "deposits" WHERE "deposits"."status" = $1[0m  [["status", "pending"]]
+  ↳ app/views/layouts/application.html.erb:35
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 2.1ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/deposits" for 172.18.0.1 at 2026-02-11 17:32:21 +0000
+Processing by Admin::DepositsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering admin/deposits/index.html.erb within layouts/application
+  [1m[36mDeposit Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "deposits" WHERE "deposits"."status" = $1 LIMIT $2[0m  [["status", "pending"], ["LIMIT", 1]]
+  ↳ app/views/admin/deposits/index.html.erb:7
+  Rendered admin/deposits/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  [1m[36mDeposit Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "deposits" WHERE "deposits"."status" = $1[0m  [["status", "pending"]]
+  ↳ app/views/layouts/application.html.erb:35
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/session" for 172.18.0.1 at 2026-02-11 17:32:27 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 20ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for 172.18.0.1 at 2026-02-11 17:32:27 +0000
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
