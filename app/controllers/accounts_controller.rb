@@ -1,5 +1,10 @@
 class AccountsController < ApplicationController
-  before_action :set_account, only: [:update]
+  before_action :set_account, only: [:update, :show]
+
+  def show
+    # @account is set by before_action
+    @ledger_entries = @account.ledger_entries.order(created_at: :desc)
+  end
 
   def update
     if @account.update(account_params)

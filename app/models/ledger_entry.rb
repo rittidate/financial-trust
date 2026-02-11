@@ -2,7 +2,7 @@ class LedgerEntry < ApplicationRecord
   belongs_to :account
 
   validates :amount, presence: true
-  validates :entry_type, presence: true, inclusion: { in: %w[transfer_in transfer_out] }
+  validates :entry_type, presence: true, inclusion: { in: %w[transfer_in transfer_out interest] }
 
   # Optional: Helpful scopes
   scope :credits, -> { where(entry_type: 'transfer_in') }

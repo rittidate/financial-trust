@@ -1,0 +1,54 @@
+<div class="max-w-6xl mx-auto p-6">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold">All Accounts</h1>
+    <div class="flex gap-4">
+      <%= link_to "Create Account", new_admin_account_path, class: "bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium" %>
+      <%= link_to "Back to Dashboard", root_path, class: "text-gray-600 hover:text-gray-900 flex items-center" %>
+    </div>
+  </div>
+
+  <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50">
+        <tr>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+          <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Balance</th>
+          <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Interest</th>
+          <th scope="col" class="relative px-6 py-3">
+            <span class="sr-only">View</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <% @accounts.each do |account| %>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="flex items-center">
+                <div class="text-sm font-medium text-gray-900"><%= account.user.name %></div>
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <%= account.type == 'SavingsAccount' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800' %>">
+                <%= account.type.underscore.humanize %>
+              </span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              <%= account.name || "-" %>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-right font-mono">
+              <%= number_to_currency(account.balance) %>
+            </td>
+             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
+              <%= account.interest_rate %>%
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+              <%= link_to "View", admin_account_path(account), class: "text-blue-600 hover:text-blue-900" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

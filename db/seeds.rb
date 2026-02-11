@@ -18,8 +18,17 @@ savings = SavingsAccount.find_or_create_by!(user: user) do |acc|
 end
 
 investing = InvestingAccount.find_or_create_by!(user: user) do |acc|
-  acc.balance = 0
-  acc.interest_rate = 0.0
+  acc.balance = 1000
+  acc.interest_rate = 5.0
+end
+
+# Create initial ledger entry for consistency
+if investing.ledger_entries.empty? && investing.balance > 0
+  LedgerEntry.create!(
+    account: investing,
+    amount: investing.balance,
+    entry_type: 'transfer_in'
+  )
 end
 
 puts "Seeed Data Created:"

@@ -7,53 +7,81 @@
 
   <div class="grid grid-cols-2 gap-6 mb-8">
     <div class="p-6 bg-white rounded shadow">
-      <h2 class="text-xl font-semibold mb-2">Savings Account</h2>
       <% if @savings %>
+        <div class="flex justify-between items-start mb-2">
+          <h2 class="text-xl font-semibold">
+            <%= link_to "Savings Account", account_path(@savings), class: "hover:text-blue-600 hover:underline" %>
+          </h2>
+          <%= link_to "View Details", account_path(@savings), class: "text-xs text-blue-500 hover:text-blue-700" %>
+        </div>
         <%= render "accounts/balance", account: @savings %>
-        <%= form_with model: @savings, url: account_path(@savings), method: :patch, class: "mt-4 flex gap-2" do |f| %>
+        <%= form_with model: @savings, scope: :account, url: account_path(@savings), method: :patch, class: "mt-4 flex gap-2" do |f| %>
           <%= f.text_field :name, class: "flex-1 rounded-md border-gray-300 shadow-sm text-sm", placeholder: "Name this account (e.g. 'Standard Savings')" %>
           <%= f.submit "Rename", class: "bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm cursor-pointer" %>
         <% end %>
       <% else %>
+        <h2 class="text-xl font-semibold mb-2">Savings Account</h2>
         <p class="text-gray-500 text-sm">No account</p>
       <% end %>
     </div>
     
-    <div class="p-6 bg-white rounded shadow">
-      <h2 class="text-xl font-semibold mb-2">Investing Account</h2>
       <% if @investing %>
+        <div class="flex justify-between items-start mb-2">
+          <h2 class="text-xl font-semibold">
+            <%= link_to "Investing Account", account_path(@investing), class: "hover:text-blue-600 hover:underline" %>
+          </h2>
+          <%= link_to "View Details", account_path(@investing), class: "text-xs text-blue-500 hover:text-blue-700" %>
+        </div>
         <%= render "accounts/balance", account: @investing %>
-        <%= form_with model: @investing, url: account_path(@investing), method: :patch, class: "mt-4 flex gap-2" do |f| %>
+        <%= form_with model: @investing, scope: :account, url: account_path(@investing), method: :patch, class: "mt-4 flex gap-2" do |f| %>
           <%= f.text_field :name, class: "flex-1 rounded-md border-gray-300 shadow-sm text-sm", placeholder: "Name this account (e.g. 'High Risk')" %>
           <%= f.submit "Rename", class: "bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm cursor-pointer" %>
         <% end %>
       <% else %>
+        <h2 class="text-xl font-semibold mb-2">Investing Account</h2>
         <p class="text-gray-500 text-sm">No account</p>
       <% end %>
-    </div>
   </div>
 
-  <div class="bg-gray-50 p-6 rounded border">
-    <h2 class="text-2xl font-bold mb-4">Internal Transfer</h2>
-    <%= form_with url: transfers_path, method: :post, class: "space-y-4" do |f| %>
-      <div class="flex gap-4">
-        <div class="flex-1">
-          <%= f.label :source_id, "From Account", class: "block text-sm font-medium" %>
-          <%= f.collection_select :source_id, @user.accounts, :id, :type, {}, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
-        </div>
-        
-        <div class="flex-1">
-          <%= f.label :target_id, "To Account", class: "block text-sm font-medium" %>
-          <%= f.collection_select :target_id, @user.accounts, :id, :type, {}, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
-        </div>
-      </div>
-      
-      <div>
-        <%= f.label :amount, "Amount ($)", class: "block text-sm font-medium" %>
-        <%= f.number_field :amount, step: 0.01, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
-      </div>
-      
-      <%= f.submit "Transfer Funds", class: "w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 cursor-pointer" %>
-    <% end %>
+
+  <div class="mt-8 bg-white p-6 rounded border shadow-sm">
+    <h2 class="text-2xl font-bold mb-4">Transaction History</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead>
+          <tr>
+            <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+            <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Account</th>
+            <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+            <th class="px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+            <th class="px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Balance</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <% @user.accounts.flat_map(&:ledger_entries).sort_by(&:created_at).reverse.each do |entry| %>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <%= entry.created_at.strftime("%b %d, %Y %H:%M") %>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                <%= entry.account.type %>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <%= entry.entry_type == 'transfer_in' || entry.entry_type == 'interest' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' %>">
+                  <%= entry.entry_type.humanize %>
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium <%= entry.entry_type == 'transfer_in' || entry.entry_type == 'interest' ? 'text-green-600' : 'text-red-600' %>">
+                <%= entry.entry_type == 'transfer_out' ? '-' : '+' %><%= number_to_currency(entry.amount) %>
+              </td>
+               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
+                <!-- Balance snapshot not stored in simple ledger, showing current for now or hidden -->
+                -
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

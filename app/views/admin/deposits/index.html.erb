@@ -1,0 +1,51 @@
+<div class="max-w-6xl mx-auto p-6">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold">Pending Deposits</h1>
+    <%= link_to "Back to Admin Dashboard", new_admin_account_path, class: "text-blue-600 hover:text-blue-800" %>
+  </div>
+
+  <% if @deposits.any? %>
+    <div class="bg-white shadow overflow-hidden sm:rounded-md">
+      <ul class="divide-y divide-gray-200">
+        <% @deposits.each do |deposit| %>
+          <li class="p-6 flex items-center justify-between">
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-medium text-blue-600"><%= number_to_currency(deposit.amount) %></h3>
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                  <%= deposit.status.humanize %>
+                </span>
+              </div>
+              <p class="text-sm text-gray-500">
+                User: <strong><%= deposit.account.user.name %></strong> | Account: <%= deposit.account.type %>
+              </p>
+              <p class="text-xs text-gray-400 mt-1">
+                Requested: <%= deposit.created_at.strftime("%b %d, %Y %H:%M") %>
+              </p>
+              
+              <% if deposit.slip.attached? %>
+                <div class="mt-4">
+                  <p class="text-sm font-medium text-gray-700 mb-1">Transfer Slip:</p>
+                  <%= link_to rails_blob_path(deposit.slip, disposition: "attachment"), class: "text-blue-600 hover:underline text-sm", target: "_blank" do %>
+                    View Slip (<%= deposit.slip.filename %>)
+                  <% end %>
+                </div>
+              <% else %>
+                <p class="text-sm text-red-500 mt-2">No slip attached</p>
+              <% end %>
+            </div>
+
+            <div class="ml-6 flex items-center space-x-4">
+              <%= button_to "Approve", approve_admin_deposit_path(deposit), method: :patch, class: "bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-medium cursor-pointer" %>
+              <%= button_to "Reject", reject_admin_deposit_path(deposit), method: :patch, class: "bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-medium cursor-pointer" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <div class="text-center py-12 bg-white rounded shadow">
+      <p class="text-gray-500 text-lg">No pending deposits.</p>
+    </div>
+  <% end %>
+</div>

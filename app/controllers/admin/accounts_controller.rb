@@ -27,5 +27,19 @@ module Admin
         render :new, status: :unprocessable_entity
       end
     end
+
+    def index
+      @accounts = Account.includes(:user).order(created_at: :desc)
+    end
+
+    def show
+      @account = Account.find(params[:id])
+      @ledger_entries = @account.ledger_entries.order(created_at: :desc)
+    end
+
+    def payout_interest
+      InterestCalculationService.new.call
+      redirect_to new_admin_account_path, notice: "Interest calculated and paid out!"
+    end
   end
 end

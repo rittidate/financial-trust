@@ -30,7 +30,17 @@
             <% if current_user %>
               <span class="text-gray-700 mr-4">Welcome, <%= current_user.name %></span>
               <% if current_user.admin? %>
-                <%= link_to "Admin", new_admin_account_path, class: "text-blue-600 hover:text-blue-800 mr-4 font-semibold" %>
+                <%= link_to "Admin", admin_accounts_path, class: "text-blue-600 hover:text-blue-800 mr-4 font-semibold" %>
+                <%= link_to "Transfer", new_admin_transfer_path, class: "text-blue-600 hover:text-blue-800 mr-4 font-semibold" %>
+                <% pending_count = Deposit.where(status: 'pending').count %>
+                <%= link_to admin_deposits_path, class: "relative text-gray-600 hover:text-gray-900 mr-4" do %>
+                  Deposits
+                  <% if pending_count > 0 %>
+                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full"><%= pending_count %></span>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= link_to "Deposit Funds", new_deposit_path, class: "text-green-600 hover:text-green-800 mr-4 font-semibold" %>
               <% end %>
               <%= button_to "Logout", session_path, method: :delete, class: "text-gray-500 hover:text-gray-900 bg-transparent border-none cursor-pointer" %>
             <% end %>

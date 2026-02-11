@@ -1,0 +1,59 @@
+<div class="max-w-4xl mx-auto p-6">
+  <div class="flex items-center justify-between mb-8">
+    <h1 class="text-3xl font-bold"><%= @account.name || @account.type.underscore.humanize %></h1>
+    <%= link_to "Back to Dashboard", root_path, class: "text-blue-600 hover:text-blue-800" %>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <div class="p-6 bg-white rounded shadow border-l-4 <%= @account.is_a?(SavingsAccount) ? 'border-green-500' : 'border-blue-500' %>">
+      <h2 class="text-xl font-semibold mb-2 text-gray-500">Current Balance</h2>
+      <div class="text-4xl font-mono font-bold text-gray-900">
+        <%= number_to_currency(@account.balance) %>
+      </div>
+    </div>
+    
+    <div class="p-6 bg-white rounded shadow">
+      <h2 class="text-xl font-semibold mb-2 text-gray-500">Interest Rate</h2>
+      <div class="text-4xl font-mono font-bold text-blue-600">
+        <%= @account.interest_rate %>%
+      </div>
+      <p class="text-sm text-gray-400 mt-1">APY (Annual Percentage Yield)</p>
+    </div>
+  </div>
+
+  <div class="bg-white p-6 rounded border shadow-sm">
+    <h2 class="text-2xl font-bold mb-4">Transaction History</h2>
+    <% if @ledger_entries.any? %>
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead>
+            <tr>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+              <th class="px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <% @ledger_entries.each do |entry| %>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <%= entry.created_at.strftime("%b %d, %Y %H:%M") %>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                  <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <%= entry.entry_type == 'transfer_in' || entry.entry_type == 'interest' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' %>">
+                    <%= entry.entry_type.humanize %>
+                  </span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium <%= entry.entry_type == 'transfer_in' || entry.entry_type == 'interest' ? 'text-green-600' : 'text-red-600' %>">
+                  <%= entry.entry_type == 'transfer_out' ? '-' : '+' %><%= number_to_currency(entry.amount) %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% else %>
+      <p class="text-gray-500 py-4 text-center">No transactions yet.</p>
+    <% end %>
+  </div>
+</div>
