@@ -6,43 +6,28 @@
   </div>
 
   <div class="grid grid-cols-2 gap-6 mb-8">
-    <div class="p-6 bg-white rounded shadow">
-      <% if @savings %>
+    <% @user.accounts.each do |account| %>
+      <div class="p-6 bg-white rounded shadow">
         <div class="flex justify-between items-start mb-2">
           <h2 class="text-xl font-semibold">
-            <%= link_to "Savings Account", account_path(@savings), class: "hover:text-blue-600 hover:underline" %>
+            <%= link_to (account.name.presence || account.type.underscore.humanize), account_path(account), class: "hover:text-blue-600 hover:underline" %>
           </h2>
-          <%= link_to "View Details", account_path(@savings), class: "text-xs text-blue-500 hover:text-blue-700" %>
+          <%= link_to "View Details", account_path(account), class: "text-xs text-blue-500 hover:text-blue-700" %>
         </div>
-        <%= render "accounts/balance", account: @savings %>
-        <%= form_with model: @savings, scope: :account, url: account_path(@savings), method: :patch, class: "mt-4 flex gap-2" do |f| %>
-          <%= f.text_field :name, class: "flex-1 rounded-md border-gray-300 shadow-sm text-sm", placeholder: "Name this account (e.g. 'Standard Savings')" %>
+        <%= render "accounts/balance", account: account %>
+        <%= form_with model: account, scope: :account, url: account_path(account), method: :patch, class: "mt-4 flex gap-2" do |f| %>
+          <%= f.text_field :name, class: "flex-1 rounded-md border-gray-300 shadow-sm text-sm", placeholder: "Name this account" %>
           <%= f.submit "Rename", class: "bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm cursor-pointer" %>
         <% end %>
-      <% else %>
-        <h2 class="text-xl font-semibold mb-2">Savings Account</h2>
-        <p class="text-gray-500 text-sm">No account</p>
-      <% end %>
-    </div>
-    
-      <% if @investing %>
-        <div class="flex justify-between items-start mb-2">
-          <h2 class="text-xl font-semibold">
-            <%= link_to "Investing Account", account_path(@investing), class: "hover:text-blue-600 hover:underline" %>
-          </h2>
-          <%= link_to "View Details", account_path(@investing), class: "text-xs text-blue-500 hover:text-blue-700" %>
-        </div>
-        <%= render "accounts/balance", account: @investing %>
-        <%= form_with model: @investing, scope: :account, url: account_path(@investing), method: :patch, class: "mt-4 flex gap-2" do |f| %>
-          <%= f.text_field :name, class: "flex-1 rounded-md border-gray-300 shadow-sm text-sm", placeholder: "Name this account (e.g. 'High Risk')" %>
-          <%= f.submit "Rename", class: "bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm cursor-pointer" %>
-        <% end %>
-      <% else %>
-        <h2 class="text-xl font-semibold mb-2">Investing Account</h2>
-        <p class="text-gray-500 text-sm">No account</p>
-      <% end %>
-  </div>
+      </div>
+    <% end %>
 
+    <% if @user.accounts.empty? %>
+      <div class="col-span-2 p-6 bg-gray-50 rounded border border-dashed border-gray-300 text-center">
+        <p class="text-gray-500">You don't have any accounts yet.</p>
+      </div>
+    <% end %>
+  </div>
 
   <div class="mt-8 bg-white p-6 rounded border shadow-sm">
     <h2 class="text-2xl font-bold mb-4">Transaction History</h2>

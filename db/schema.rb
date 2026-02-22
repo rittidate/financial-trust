@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_02_11_153609) do
+ActiveRecord::Schema[7.2].define(version: 2026_02_12_100735) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "account_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_account_users_on_account_id"
+    t.index ["user_id", "account_id"], name: "index_account_users_on_user_id_and_account_id", unique: true
+    t.index ["user_id"], name: "index_account_users_on_user_id"
+  end
 
   create_table "accounts", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -81,6 +91,8 @@ ActiveRecord::Schema[7.2].define(version: 2026_02_11_153609) do
     t.boolean "admin", default: false, null: false
   end
 
+  add_foreign_key "account_users", "accounts"
+  add_foreign_key "account_users", "users"
   add_foreign_key "accounts", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"

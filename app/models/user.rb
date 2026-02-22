@@ -1,9 +1,17 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :accounts, dependent: :destroy
-  has_one :savings_account, class_name: "SavingsAccount"
-  has_one :investing_account, class_name: "InvestingAccount"
+  has_many :account_users, dependent: :destroy
+  has_many :accounts, through: :account_users
+  
+  # Helpers to find specific account types (returns first match)
+  def savings_account
+    accounts.where(type: 'SavingsAccount').first
+  end
+
+  def investing_account
+    accounts.where(type: 'InvestingAccount').first
+  end
 
   validates :name, presence: true
 end
